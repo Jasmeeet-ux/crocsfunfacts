@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e4f9f5;
+            color: #306754;
+            text-align: center;
+            padding: 20px;
+        }
+        #fact {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #82e6a1;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #66c88d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discover Crocodile Facts!</h1>
+    <div id="fact"></div>
+    <button onclick="displayFact()">Show Random Fact</button>
+
+    <script>
+        const facts = [
+            {
+                "fact": "Ancient Survivors",
+                "description": "Crocodiles have been around for about 200 million years, surviving the extinction that wiped out the dinosaurs."
+            },
+            {
+                "fact": "Powerful Jaws",
+                "description": "Crocodiles have one of the strongest bites in the animal kingdom, with a bite force that can exceed 3,700 pounds per square inch."
+            },
+            // Add all other facts here
+        ];
+
+        function displayFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('fact').innerHTML = `<h2>${fact.fact}</h2><p>${fact.description}</p>`;
+        }
+    </script>
+</body>
+</html>
